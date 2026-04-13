@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dreamfall Sky</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			background: #ffffff;
+			font-family: Arial, sans-serif;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#game-area {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		#canvas {
+			width: 1280px;
+			height: 720px;
+			max-width: 92vw;
+			max-height: 88vh;
+			display: block;
+			background: #000;
+			box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+		}
+
+		#guide-link {
+			position: fixed;
+			right: 20px;
+			bottom: 16px;
+			font-size: 14px;
+			color: #333;
+			text-decoration: none;
+			background: rgba(255,255,255,0.9);
+			padding: 8px 12px;
+			border-radius: 10px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+			z-index: 10;
+		}
+
+		#guide-link:hover {
+			text-decoration: underline;
+		}
+		#page-title {
+		position: fixed;
+		top: 24px;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 0;
+		font-size: 42px;
+		font-weight: 700;
+		color: #222;
+		letter-spacing: 2px;
+		z-index: 20;
+		text-align: center;
+		pointer-events: none;
+	}
+	</style>
+</head>
+<body>
+<h1 id="page-title">Dreamfall Sky</h1>
+	<div id="game-area">
+		<canvas id="canvas"></canvas>
+	</div>
+
+	<a id="guide-link" href="https://www.thai-square.com/earthlings.land.metaverse-nft-game-worlds/tackling-game-development-with-generative-ai-even-without-any-prior-game-development-experience/" target="_blank">
+		Development insights
+	</a>
+
+	<script src="index.js"></script>
+	<script>
+		const engine = new Engine({"args":[],"canvasResizePolicy":1,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":6529756,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4});
+		engine.startGame({
+			canvas: document.getElementById("canvas")
+		});
+	</script>
+</body>
+</html>
